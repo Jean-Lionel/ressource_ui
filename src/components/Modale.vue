@@ -33,6 +33,7 @@ export default {
     display: flex;
     justify-content:center;
     align-items:center;
+    overflow-x: scroll;
 }
 
 .overlay{
@@ -47,9 +48,12 @@ export default {
 .modal{
     background: #FFFFFF;
     color: #2c3e50;
-    position:fixed;
+    position:absolute;
     padding: 50px;
-    top: 30%;
+    top:10%;
+    overflow: auto;
+
+   
 }
 
 .btn_close{

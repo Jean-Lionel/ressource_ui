@@ -1,19 +1,10 @@
 <template>
     <div>
-        <modale v-bind:revele="revele" :toggleModale="toggleModale">
-            <h1>Modale</h1>
-
-            <input class="form-control" type="number" v-model="number1">
-            <input class="form-control" type="number" v-model="number2">
-            <div>
-            <h1> {{ result }} </h1>
+        <modale v-bind:revele="revele" :toggleModale="toggleModale" >
             
-            </div>
-
-            <div>
-            
-            </div>
-
+            <input class="form-control" type="number" v-model="number1"> + 
+            <input class="form-control" type="number" v-model="number2"> = <b>{{ result }}</b>
+           
             <button @click="helloWorld">Enregistrer</button>
         </modale>
         <button @click="toggleModale">OpenModate</button>
@@ -47,5 +38,7 @@ export default {
 </script>
 
 <style>
-
+.test{
+    border: 20px solid black;
+}
 </style>
