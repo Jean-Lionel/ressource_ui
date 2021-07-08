@@ -1,9 +1,7 @@
 <template>
     <div>
-        <add-employe/>
-
+        <add-employe />
         <div>
-
             <table>
                 <thead>
                 <tr>
@@ -45,7 +43,7 @@
                         <td> {{employe.department }} </td>
                         <td> {{employe.role }} </td>
                         <td>
-                            <button title="Modifier"><i class="fa fa-edit" ></i></button>
+                            <button title="Modifier" @click="updatEmploye(employe)"><i class="fa fa-edit" ></i></button>
                             <button title="Modifier"><i class="fa fa-trash" ></i></button>
                             
                         </td>
@@ -68,7 +66,7 @@ export default {
   components: { Modale, AddEmploye },
   data(){
       return{
-
+          selectedEmploye : null
       }
   },
   mounted() {
@@ -88,6 +86,14 @@ export default {
           .catch(err => {
               console.error(err); 
           })
+
+      },
+      updatEmploye(employe){
+         
+         this.$store.state.selectedEmploye = employe
+         
+      },
+      updateEmployeInfo(lion){
 
       }
       

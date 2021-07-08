@@ -1,6 +1,7 @@
 <template>
     <div>
         <button @click="toggleModale">Ajouter</button>
+
         <modale v-bind:toggleModale="toggleModale" v-bind:revele="revele">
              <div class="form-group">
                 <label for="form.emp_id">NOM ET PRENOM</label>
@@ -70,7 +71,9 @@
             </div>
 
             <div>
-                <button @click="saveMember">Enregistrer</button>
+             
+                <button v-if="employe_id !=null " @click="updateMember">Modifier</button>
+                <button v-else @click="saveMember">Enregistrer</button>
             </div>
         </modale>
     </div>
@@ -81,6 +84,7 @@ import Modale from './Modale.vue'
 import axios from 'axios'
 export default {
   components: { Modale },
+  props: ['selectedEmploye'],
     data(){
         return{
             revele: false,
@@ -99,6 +103,18 @@ export default {
                 role : "",
             },
             errorMessage : "",
+            employe_id : null
+
+        }
+    },
+    watch: {
+        "$store.state.selectedEmploye"(new_val){
+            if(new_val) {
+                this.form = new_val
+                this.employe_id = new_val.id
+                console.log(this.employe_id)
+                this.revele = !this.revelec 
+            }
 
         }
     },
@@ -106,7 +122,10 @@ export default {
         this.initializeData();
     },
     methods: {
-
+        
+        updateMember(){
+            alert("je suis cool")
+        },
          fetchData() {
           axios.get(this.baseURL+"/employee/",this.header)
           .then(res => {
@@ -131,7 +150,9 @@ export default {
             })
         },
         toggleModale(){
+            this.$store.state.selectedEmploye = null
             this.revele = !this.revele
+            this.employe_id = null
         },
         initializeData(){
              axios.get(this.baseURL+"/role/",this.header)
