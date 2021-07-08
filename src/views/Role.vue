@@ -14,7 +14,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button @click="saveUpdateDepartement" v-if="update">Modifier </button>
+                    <button @click="saveupdateRole" v-if="update">Modifier </button>
                     <button @click="saveDepartement" v-else>Enregistrer </button>
                     <div v-if="errorMessage">
                      <p class="error">{{ errorMessage}}</p>
@@ -23,7 +23,7 @@
             </div>
 
             <div>
-               <role-liste  @updateDepartement="updateDepartement" @deleteDepartement="deleteDepartement"/>
+               <role-liste  @updateRole="updateRole" @deleterole="deleterole"/>
             </div>
          </div>
 
@@ -65,7 +65,7 @@ export default {
                 this.errorMessage = err.response.data
             })
         },
-        saveUpdateDepartement(){
+        saveupdateRole(){
 
             axios.put(this.baseURL+"/role/"+this.departement_id +"/",this.form,this.header)
             .then(res => {
@@ -77,7 +77,7 @@ export default {
             })
 
         },
-        updateDepartement(dep){
+        updateRole(dep){
             this.form.name = dep.name
             this.form.description = dep.description
             this.update = true
@@ -93,7 +93,7 @@ export default {
             })
         },
 
-        deleteDepartement(dep){
+        deleterole(dep){
             axios.delete(this.baseURL+"/role/"+dep+"/",this.header)
             .then(res => {
                 console.log(res)

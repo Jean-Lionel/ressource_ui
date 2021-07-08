@@ -35,8 +35,8 @@ export default {
     },
     methods: {
         
-        modifierRole(dep){
-            
+        modifierRole(role){
+            this.$emit('updateRole', role)
         },
         deleterole(dep){
             if(confirm('êtes-vous sûr ? ')){

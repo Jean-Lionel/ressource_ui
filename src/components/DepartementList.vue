@@ -37,7 +37,7 @@ export default {
     methods: {
         
         modifierDepeartement(dep){
-            
+            this.$emit('updateDepartement', dep)
         },
         deleteDepartement(dep){
             if(confirm('êtes-vous sûr ? ')){
