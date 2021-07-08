@@ -13,8 +13,8 @@
                     <td>{{role.name}}</td>
                     <td>{{role.description}}</td>
                     <td>
-                        <button @click="modifierRole(role)">Modifier</button>
-                        <button @click="deleterole(role.id)"> Supprimer</button>
+                        <button @click="modifierRole(departement)" title="Modifier"><i class="fa fa-edit" ></i></button>
+                        <button @click="deleterole(departement.id)" title="Modifier"><i class="fa fa-trash" ></i></button>
                     </td>
                 </tr>
             </tbody>

@@ -8,7 +8,14 @@ import Vue from 'vue'
 const myMixin = {
     data(){
         return{
-            baseURL: this.$store.state.url
+            baseURL: this.$store.state.url,
+            personneTitle: ['Mr', 'Mrs', 'Mss', 'Dr', 'Sir', 'Madam'],
+            etat_civil :['Married', 'Single', 'Divorced', 'Widow', 'Widower'],
+            genderList : ['male', 'female', 'other', 'Not Known'],
+            educationLevel : ['O-LEVEL', 'Senior High', 'Junior High', 
+            'Tertiary', 'Primary Level', 'Other' ],
+            employe_type : ['Full-Time', 'Part-Time', 'Contract', 'Intern']
+
         }
     },
     computed:{
@@ -22,12 +29,13 @@ const myMixin = {
 
     },
     methods: {
-        foo() {
-            console.log('foo')
-        },
-        conflicting() {
-            console.log('from mixin')
-        }
+    datetime(x) {
+      if (!x) return "-"
+      let date = new Date(x);
+      return new Intl.DateTimeFormat(
+        'en-US'
+      ).format(date)
+    },
     }
 }
 

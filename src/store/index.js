@@ -6,6 +6,7 @@ export default createStore({
     user : null,
     departements : [],
     roles : [],
+    employes : []
   },
   mutations: {
   },
