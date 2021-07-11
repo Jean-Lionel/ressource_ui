@@ -1,9 +1,10 @@
 <template>
 
     <div>
-        <div>
-            <h4>AJOUTER UNE DEPARTEMENT</h4>
-            <div>
+        <div class="role">
+            
+            <div >
+                <h4>Nouvel rôle</h4>
                 <div class="form-group">
                     <label for="name">NOM</label>
                     <input id="name" v-model="form.name" class="form-control" type="text" name="">
@@ -23,6 +24,7 @@
             </div>
 
             <div>
+                <h4> Liste des rôles </h4>
                <role-liste  @updateRole="updateRole" @deleterole="deleterole"/>
             </div>
          </div>
@@ -107,3 +109,12 @@ export default {
     
 }
 </script>
+
+
+<style scoped>
+.role{
+    display:flex;
+    justify-content: space-around;
+}
+
+</style>

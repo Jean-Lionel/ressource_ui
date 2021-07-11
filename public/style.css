@@ -1,8 +1,36 @@
-
+body{
+    margin:0;
+    padding: 0;
+}
 .error{
     color: red;
 }
 
 .active{
     background:gold;
+}
+
+.text-danger{
+    color: red;
+}
+
+label, input, select{
+    display: block;
+    width: 300px;
+    text-align: left;
+    padding: 5px;
+}
+
+button{
+    width: auto;
+    cursor: pointer;
+}
+
+table{
+    width: auto;
+    border-collapse: collapse;
+}
+
+table, tr,td,th{
+    border: 1px solid #ccc;
 }

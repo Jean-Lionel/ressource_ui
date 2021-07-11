@@ -1,9 +1,10 @@
 <template>
 
     <div>
-        <div>
-            <h4>AJOUTER UNE DEPARTEMENT</h4>
+        <div class="department">
+            
             <div>
+                <h4>AJOUTER UNE DEPARTEMENT</h4>
                 <div class="form-group">
                     <label for="name">NOM</label>
                     <input id="name" v-model="form.name" class="form-control" type="text" name="">
@@ -23,6 +24,7 @@
             </div>
 
             <div>
+                <h4> TOUS LES  DEPARTEMENTS</h4>
                <departement-list  @updateDepartement="updateDepartement" @deleteDepartement="deleteDepartement"/>
             </div>
          </div>
@@ -106,3 +108,9 @@ export default {
     
 }
 </script>
+
+<style scoped>
+.department{
+    display: flex;
+}
+</style>
