@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="add-employe">
         <button @click="toggleModale">Ajouter</button>
 
         <modale v-bind:toggleModale="toggleModale" v-bind:revele="revele">
@@ -124,7 +124,18 @@ export default {
     methods: {
         
         updateMember(){
-            alert("je suis cool")
+
+             axios.put(this.baseURL+"/employee/"+this.employe_id +"/",this.form, this.header)
+            .then(res => {
+                console.log(res)
+                this.fetchData()
+                this.revele = !this.revele
+            })
+            .catch(err => {
+                
+                this.errorMessage = err.response.data
+            })
+           
         },
          fetchData() {
           axios.get(this.baseURL+"/employee/",this.header)
@@ -183,3 +194,9 @@ export default {
     
 }
 </script>>
+
+<style scoped>
+.add-employe{
+    text-align: left;
+}
+</style>

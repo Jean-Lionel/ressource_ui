@@ -96,6 +96,7 @@ export default {
         },
 
         deleterole(dep){
+            console.log(dep)
             axios.delete(this.baseURL+"/role/"+dep+"/",this.header)
             .then(res => {
                 console.log(res)

@@ -8,6 +8,7 @@ export default createStore({
     roles : [],
     employes : [],
     selectedEmploye : null,
+    keySearch : ""
   },
   mutations: {
   },

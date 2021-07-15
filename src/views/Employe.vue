@@ -1,6 +1,7 @@
 <template>
     <div>
         <add-employe />
+        <seach-component />
         <div>
             <table>
                 <thead>
@@ -44,7 +45,7 @@
                         <td> {{employe.role }} </td>
                         <td>
                             <button title="Modifier" @click="updatEmploye(employe)"><i class="fa fa-edit" ></i></button>
-                            <button title="Modifier"><i class="fa fa-trash" ></i></button>
+                            <button title="Delete" @click="deleteEmploye(employe)"><i class="fa fa-trash" ></i></button>
                             
                         </td>
                     </tr>
@@ -54,20 +55,29 @@
 
         </div>
 
+        
     </div>
 </template>
 
 <script>
 import AddEmploye from '../components/AddEmploye.vue'
+
 import Modale from '../components/Modale.vue'
+
 import axios from 'axios'
+import SeachComponent from '../components/SeachComponent.vue'
 
 export default {
-  components: { Modale, AddEmploye },
+  components: { Modale, AddEmploye, SeachComponent  },
   data(){
       return{
           selectedEmploye : null
       }
+  },
+  watch:{
+    //   "$store.state.keySearch"(new_val){
+    //      // this.$store.state.employes = this.$store.state.employes.filter(a => false)
+    //   }
   },
   mounted() {
       this.fetchData()
@@ -93,7 +103,15 @@ export default {
          this.$store.state.selectedEmploye = employe
          
       },
-      updateEmployeInfo(lion){
+      deleteEmploye(employe){
+           axios.delete(this.baseURL+"/employee/"+employe.id+"/",this.header)
+          .then(res => {
+              this.fetchData()
+              //console.log(res)
+          })
+          .catch(err => {
+              console.error(err); 
+          })
 
       }
       

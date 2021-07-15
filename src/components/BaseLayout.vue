@@ -9,7 +9,7 @@
                             tag="button"
                             exact
                         >
-                        <i class="fa fa-building-o"></i>
+                        
                             <span class="link-name">Departements</span>
                 </router-link>
                 </li>
@@ -22,7 +22,7 @@
                             tag="button"
                             exact
                         >
-                        <i class="fa fa-building-o"></i>
+                        
                             <span class="link-name">Rôle</span>
                 </router-link>
                 </li>
@@ -35,13 +35,13 @@
                             tag="button"
                             exact
                         >
-                            <i class="fa fa-building-o"></i>
+                            
                             <span class="link-name">Employes</span>
                 </router-link>
                 </li>
 
                 <li class="logout">
-                        <i class="fa fa-building-o"></i>
+                        
                         <button @click="logout">Se Déconnecter </button>
                 </li>
         
@@ -89,6 +89,7 @@ export default {
         align-content: flex-end;
         background: rgb(30, 63, 97);
         list-style: none;
+        text-align: left;
 
     }
 
@@ -96,6 +97,7 @@ export default {
         color: #fff;
         text-decoration: none;
         font-size: 20px;
+        margin-top : 20px;
     }
     .link-list a i {
         display: block;

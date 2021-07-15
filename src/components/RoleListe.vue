@@ -13,8 +13,8 @@
                     <td>{{role.name}}</td>
                     <td>{{role.description}}</td>
                     <td>
-                        <button @click="modifierRole(departement)" title="Modifier"><i class="fa fa-edit" ></i></button>
-                        <button @click="deleterole(departement.id)" title="Modifier"><i class="fa fa-trash" ></i></button>
+                        <button @click="modifierRole(role)" title="Modifier"><i class="fa fa-edit" ></i></button>
+                        <button @click="deleterole(role.id)" title="Modifier"><i class="fa fa-trash" ></i></button>
                     </td>
                 </tr>
             </tbody>
@@ -36,6 +36,7 @@ export default {
     methods: {
         
         modifierRole(role){
+            //console.log(role)
             this.$emit('updateRole', role)
         },
         deleterole(dep){
