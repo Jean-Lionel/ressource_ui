@@ -14,8 +14,7 @@
                 </router-link>
                 </li>
 
-                <li>
-                
+                <li>  
                 <router-link
                             to="role"
                             active-class="active"
@@ -25,6 +24,18 @@
                         
                             <span class="link-name">Rôle</span>
                 </router-link>
+                </li>
+
+                <li>  
+                    <router-link
+                                to="bank"
+                                active-class="active"
+                                tag="button"
+                                exact
+                            >
+                            
+                                <span class="link-name">Banque</span>
+                    </router-link>
                 </li>
 
                 <li>

@@ -7,6 +7,7 @@ export default createStore({
     departements : [],
     roles : [],
     employes : [],
+    banques : [],
     selectedEmploye : null,
     keySearch : ""
   },

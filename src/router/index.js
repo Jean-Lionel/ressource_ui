@@ -4,7 +4,7 @@ import Home from '../views/Home'
 import Departement from '../views/Departement'
 import Employe from '../views/Employe'
 import Role from '../views/Role'
-
+import Banque from '../views/Banque'
 
 
 const routes = [
@@ -12,6 +12,7 @@ const routes = [
   { path: '/departement', name: 'departement', component: Departement},
   { path: '/employes', name: 'employes', component: Employe},
   { path: '/role', name: 'role', component: Role},
+  { path: '/bank', name: 'bank', component: Banque},
   {
     path: '/about',
     name: 'About',

@@ -38,6 +38,18 @@
                 <label for="form.birthday">DATE DE NAISSANCE</label>
                 <input type="date" v-model="form.birthday" id="form.birthday">
             </div>
+              <div class="form-group">
+      
+                <label for="form.banque">BANQUE </label>
+                 <select v-model="form.banque" id="form.department">
+                    <option v-for="banque in banques" v-bind:value="banque.id" :key="banque.id">{{banque.name}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="form.compte">COMPTE</label>
+                <input type="text" v-model="form.compte" id="form.compte">
+            </div>
 
              <div class="form-group">
                 <label for="form.education">Education </label>
@@ -53,12 +65,12 @@
             </div>
        
             <div class="form-group">
-      
                 <label for="form.role">ROLE</label>
                  <select v-model="form.role" id="form.role">
                     <option v-for="role in roles" v-bind:value="role.id" :key="role.id">{{role.name}}</option>
                 </select>
             </div>
+
             <div class="form-group">
       
                 <label for="form.department">DEPARTMENT </label>
@@ -97,6 +109,8 @@ export default {
                 gender : "",
                 birthday : "",
                 education : "",
+                compte : "",
+                banque : "",
                 employeetype : "",
                 profile : 1,
                 department : "",
@@ -180,6 +194,13 @@ export default {
             .catch(err => {
                 console.error(err); 
             })
+             axios.get(this.baseURL+"/bank/",this.header)
+            .then(res => {
+                this.$store.state.banques = res.data.results
+            })
+            .catch(err => {
+                console.error(err); 
+            })
         }
         
     },
@@ -189,6 +210,9 @@ export default {
         },
         departments(){
             return this.$store.state.departments
+        },
+        banques(){
+            return this.$store.state.banques 
         }
     }
     
