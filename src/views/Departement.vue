@@ -23,7 +23,7 @@
                 </div>
             </div>
 
-            <div>
+            <div class="departement_list">
                 <h4> TOUS LES  DEPARTEMENTS</h4>
                <departement-list  @updateDepartement="updateDepartement" @deleteDepartement="deleteDepartement"/>
             </div>
@@ -112,5 +112,9 @@ export default {
 <style scoped>
 .department{
     display: flex;
+}
+
+.departement_list{
+    width: 80%;
 }
 </style>

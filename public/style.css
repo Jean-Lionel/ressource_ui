@@ -27,10 +27,11 @@ button{
 }
 
 table{
-    width: auto;
+    width: 100%;
     border-collapse: collapse;
 }
 
 table, tr,td,th{
     border: 1px solid #ccc;
+    text-align: left;
 }

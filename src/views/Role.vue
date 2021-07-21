@@ -23,7 +23,7 @@
                 </div>
             </div>
 
-            <div>
+            <div class="list-role">
                 <h4> Liste des rôles </h4>
                <role-liste  @updateRole="updateRole" @deleterole="deleterole"/>
             </div>
@@ -115,7 +115,10 @@ export default {
 <style scoped>
 .role{
     display:flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+}
+.list-role{
+    width: 80%;
 }
 
 </style>

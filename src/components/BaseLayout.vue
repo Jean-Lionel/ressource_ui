@@ -33,8 +33,28 @@
                                 tag="button"
                                 exact
                             >
-                            
                                 <span class="link-name">Banque</span>
+                    </router-link>
+                </li> 
+                <li>  
+                    <router-link
+                                to="presences"
+                                active-class="active"
+                                tag="button"
+                                exact
+                            >
+                                <span class="link-name">Présence</span>
+                    </router-link>
+                </li>
+
+                 <li>  
+                    <router-link
+                                to="conges"
+                                active-class="active"
+                                tag="button"
+                                exact
+                            >
+                                <span class="link-name">Congées</span>
                     </router-link>
                 </li>
 
@@ -51,6 +71,33 @@
                 </router-link>
                 </li>
 
+                <li> 
+                <router-link
+                            to="paiements"
+                            active-class="active"
+                            tag="button"
+                            exact
+                        >
+                            
+                            <span class="link-name">Paiements</span>
+                </router-link>
+                </li>
+
+                 <li> 
+                <router-link
+                            to="rapport"
+                            active-class="active"
+                            tag="button"
+                            exact
+                        >
+                            
+                            <span class="link-name">Rapport</span>
+                </router-link>
+                </li>
+
+
+
+
                 <li class="logout">
                         
                         <button @click="logout">Se Déconnecter </button>
@@ -58,7 +105,7 @@
         
         </ul>
 
-        <div> 
+        <div class="slot-view"> 
         <slot></slot>
         
         </div>
@@ -92,6 +139,10 @@ export default {
         align-items: stretch;
         display: flex;
         height: 100vh; 
+    }
+
+    .slot-view{
+        width: 100%;
     }
 
     .link-list{
