@@ -6,6 +6,9 @@ import Employe from '../views/Employe'
 import Role from '../views/Role'
 import Banque from '../views/Banque'
 import Conge from '../views/Conge'
+import Presence from '../views/Presence'
+import Rapport from '../views/Rapport'
+import Paiement from '../views/Paiement'
 
 
 const routes = [
@@ -15,6 +18,9 @@ const routes = [
   { path: '/role', name: 'role', component: Role},
   { path: '/bank', name: 'bank', component: Banque},
   { path: '/conges', name: 'conges', component: Conge},
+  { path: '/presences', name: 'presences', component: Presence},
+  { path: '/paiements', name: 'paiements', component: Paiement},
+  { path: '/rapport', name: 'rapport', component: Rapport},
   {
     path: '/about',
     name: 'About',
