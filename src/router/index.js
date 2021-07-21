@@ -5,6 +5,7 @@ import Departement from '../views/Departement'
 import Employe from '../views/Employe'
 import Role from '../views/Role'
 import Banque from '../views/Banque'
+import Conge from '../views/Conge'
 
 
 const routes = [
@@ -13,6 +14,7 @@ const routes = [
   { path: '/employes', name: 'employes', component: Employe},
   { path: '/role', name: 'role', component: Role},
   { path: '/bank', name: 'bank', component: Banque},
+  { path: '/conges', name: 'conges', component: Conge},
   {
     path: '/about',
     name: 'About',
