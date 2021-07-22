@@ -10,7 +10,6 @@ import Presence from '../views/Presence'
 import Rapport from '../views/Rapport'
 import Paiement from '../views/Paiement'
 
-
 const routes = [
   {path: '/',name: 'Home',component: Home},
   { path: '/departement', name: 'departement', component: Departement},
